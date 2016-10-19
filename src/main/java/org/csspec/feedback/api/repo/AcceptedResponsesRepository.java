@@ -7,5 +7,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * Created by Jatinder Dhawan on 10/16/2016.
  */
 public interface AcceptedResponsesRepository extends MongoRepository<AcceptedResponses,String>,AcceptedResponsesOperation {
-
+    public void updateResponseTable(String feedbackId, String questionId, int response);
 }
