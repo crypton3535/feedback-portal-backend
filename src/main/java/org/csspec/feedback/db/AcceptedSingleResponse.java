@@ -6,18 +6,21 @@ import lombok.Setter;
 /**
  * Created by Jatinder Dhawan on 10/16/2016.
  */
+
 public class AcceptedSingleResponse {
-    @JsonProperty("QuestionId")
+    @JsonProperty("questionId")
     @Setter @Getter private String questionId;
 
-    @JsonProperty("Response")
-    @Setter @Getter private int response;
+    @JsonProperty("response")
+    @Setter @Getter private String response;
 
+    public AcceptedSingleResponse() {
+    }
     public String getQuestionId() {
         return this.questionId;
     }
 
-    public int getResponse() {
+    public String getResponse() {
         return this.response;
     }
 

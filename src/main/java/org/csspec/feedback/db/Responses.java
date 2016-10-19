@@ -18,4 +18,9 @@ public class Responses {
         return this.responseList;
     }
 
+    public Responses() {
+        this.feedbackId = " dcsd";
+        this.questionId = "css";
+    }
+
 }

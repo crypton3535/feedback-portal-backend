@@ -8,23 +8,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AcceptedResponses {
-    @JsonProperty("FeedbackId")
-    @Getter @Setter private String feedbackId;
+    @JsonProperty("userId")
+    @Getter @Setter private String userId;
 
-    @JsonProperty("Responses")
+    @JsonProperty("courseId")
+    @Getter @Setter private String courseId;
+
+    @JsonProperty("teacherId")
+    @Getter @Setter String teacherId;
+
+    @JsonProperty("responses")
     @Getter @Setter private List<AcceptedSingleResponse> responses = new ArrayList<AcceptedSingleResponse>();
 
     public List<AcceptedSingleResponse> getResponses() {
         return this.responses;
     }
 
-    public String getFeedbackId() {
-        return this.feedbackId;
+    public String getCourseId() {
+        return this.courseId;
+    }
+    public String getUserId(){
+        return this.userId;
     }
 
+    public String getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public AcceptedResponses() {
+        this.courseId = "sdcs";
+    }
     @Override
     public String toString() {
-        String abc = "{FeedbackId : "+feedbackId+",Responses : [\n";
+        String abc = "{CourseId : "+courseId+ ",\nUserId : "+ userId+",Responses : [\n";
         for(int i=0;i<responses.size();i++) {
             abc = abc + responses.get(i);
         }

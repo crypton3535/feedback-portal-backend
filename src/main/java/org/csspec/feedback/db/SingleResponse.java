@@ -21,26 +21,31 @@ public class SingleResponse {
     @Getter @Setter private int optionFive;
 
     SingleResponse() {
-        optionOne = optionTwo = optionThree = optionFour = optionFive = 0;
+        this.optionOne = this.optionTwo = this.optionThree = this.optionFour = this.optionFive = 0;
     }
 
     public int getOptionOne(){
         return this.optionOne;
     }
+    public void setOptionOne(int value) {this.optionOne = value;}
 
     public int getOptionTwo(){
         return this.optionTwo;
     }
+    public void setOptionTwo(int value) {this.optionOne = value;}
 
     public int getOptionThree(){
         return this.optionThree;
     }
+    public void setOptionThree(int value) {this.optionOne = value;}
 
     public int getOptionFour(){
         return this.optionFour;
     }
+    public void setOptionFour(int value) {this.optionOne = value;}
 
     public int getOptionFive(){
         return this.optionFive;
     }
+    public void setOptionFive(int value) {this.optionOne = value;}
 }
