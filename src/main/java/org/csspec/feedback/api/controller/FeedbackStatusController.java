@@ -22,7 +22,7 @@ public class FeedbackStatusController {
     @RequestMapping(value = "/feedback/status/{courseId}/{userId}", method = RequestMethod.GET)
     public Map<String,Boolean> getFeedbackStatus(@PathVariable String courseId, @PathVariable String userId) {
         System.out.println("CourseID: " + courseId + ", UserId:" + userId);
-        FeedbackStatus temp  = mongo.findOne(Query.query(Criteria.where("courseId").is(courseId).where("userId").is(userId)),FeedbackStatus.class);
+        FeedbackStatus temp  = mongo.findOne(Query.query(Criteria.where("courseId").is(courseId).andOperator(Criteria.where("userId").is(userId))),FeedbackStatus.class);
         return Collections.singletonMap("status",temp!=null);
     }
 }
