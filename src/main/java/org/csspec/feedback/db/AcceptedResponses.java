@@ -39,8 +39,7 @@ public class AcceptedResponses {
         this.teacherId = teacherId;
     }
 
-    public AcceptedResponses() {
-        this.courseId = "sdcs";
+    public AcceptedResponses(){
     }
     @Override
     public String toString() {

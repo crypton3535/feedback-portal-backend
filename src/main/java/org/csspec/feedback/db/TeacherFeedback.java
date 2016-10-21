@@ -11,6 +11,9 @@ public class TeacherFeedback {
     @JsonProperty("teacherId")
     @Getter @Setter private String teacherId;
 
+    @JsonProperty("courseId")
+    @Getter @Setter private String courseId;
+
     @JsonProperty("responses")
     @Getter @Setter private List<AcceptedSingleResponse> responses = new ArrayList<AcceptedSingleResponse>();
 
@@ -28,5 +31,13 @@ public class TeacherFeedback {
 
     public void setResponses(List<AcceptedSingleResponse> responses) {
         this.responses = responses;
+    }
+
+    public String getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
     }
 }

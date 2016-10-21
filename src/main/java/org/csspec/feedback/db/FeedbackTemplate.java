@@ -9,24 +9,24 @@ import java.util.List;
 
 public class FeedbackTemplate {
 
-    @JsonProperty("FeedbackId")
+    @JsonProperty("feedbackId")
     @Setter @Getter private String feedbackId;
 
-    @JsonProperty("CourseId")
+    @JsonProperty("courseId")
     @Getter @Setter private String courseId;
 
-    @JsonProperty("AdminId")
+    @JsonProperty("adminId")
     @Getter @Setter private List<String> adminId;
 
-    @JsonProperty("Description")
+    @JsonProperty("description")
     @Getter @Setter private String description;
 
-    @JsonProperty("IsOfficial")
+    @JsonProperty("isOfficial")
     @Getter @Setter private int isOfficial;
 /*  1 for official feedbacks and 0 for non-official feedbacks,
     later enum could be added for different societies for directly finding their org.csspec.feedback forms
  */
-    @JsonProperty("QuestionList")
+    @JsonProperty("questionList")
     @Getter @Setter private List<Question> question = new ArrayList<Question>();
 
     public List<Question> getQuestionList() {
