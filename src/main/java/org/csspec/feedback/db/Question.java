@@ -4,16 +4,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * Created by Jatinder Dhawan on 10/16/2016.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Question {
+
+    enum QuestionType {multiple, text, level };
+
     @JsonProperty("questionId")
     @Getter @Setter private String questionId;
 
-    @JsonProperty("questionStatement")
-    @Getter @Setter private String questionStatement;
+    @JsonProperty("statement")
+    @Getter @Setter private String statement;
 
-  //  @JsonProperty
-   // @Getter @Setter private
+    @JsonProperty("type")
+    @Getter @Setter private String type;
+
+    @JsonProperty("options")
+    @Getter @Setter private List<QuestionOptions> options = new ArrayList<>();
+
+    @JsonProperty("text")
+    @Getter @Setter private String text;
 }

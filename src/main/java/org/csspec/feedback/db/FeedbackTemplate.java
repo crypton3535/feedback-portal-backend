@@ -12,9 +12,6 @@ public class FeedbackTemplate {
     @JsonProperty("feedbackId")
     @Setter @Getter private String feedbackId;
 
-    @JsonProperty("courseId")
-    @Getter @Setter private String courseId;
-
     @JsonProperty("adminId")
     @Getter @Setter private List<String> adminId;
 

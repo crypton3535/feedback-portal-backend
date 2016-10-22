@@ -12,9 +12,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 
-/**
- * Created by Jatinder Dhawan on 10/16/2016.
- */
 @RestController
 public class FeedbackTemplateController {
     @Autowired
@@ -28,8 +25,9 @@ public class FeedbackTemplateController {
     }
 
     /* Get questions of a given org.csspec.feedback id */
-    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/feedback/template", method = RequestMethod.GET)
-    public String getFeedbackQuestions() {
+    @RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/feedback/template/{templateId}", method = RequestMethod.GET)
+    public FeedbackTemplate getFeedbackQuestions(@PathVariable String templateId) {
+      /*
         String everything = new String();
         try {
             BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jatinder Dhawan\\IdeaProjects\\Feedback\\src\\main\\java\\org\\csspec\\feedback\\api\\controller\\questions.json"));
@@ -47,7 +45,8 @@ public class FeedbackTemplateController {
             System.out.println(e);
         }
         return everything;
+       */
+       return feedbackTemplateRepository.getFeedbackTemplateByFeedbackId(templateId);
     }
-
 
 }

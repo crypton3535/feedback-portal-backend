@@ -88,14 +88,15 @@ public class AcceptedResponsesController {
         map.put("teacherId",teacherId);
         map.put("courseId",courseId);
 
-        System.out.println("Map now is "+map);
+     //   System.out.println("Map now is "+map);
         List<Map<String, Object>> arrayList = new ArrayList<>();
         for(int i = 1;i<=10;i++) {
             Map<String,Object> leveltwo = new HashMap<>();
             leveltwo.put("questionId",i+5);
             leveltwo.put("average",getAverageResponse(teacherId,courseId,i));
+            leveltwo.put("details",getDetails(teacherId,courseId,i));
             arrayList.add(leveltwo);
-            System.out.println("Array List now has " + arrayList.size()+" values.");
+         //   System.out.println("Array List now has " + arrayList.size()+" values.");
             //System.out.println(getAverageResponse(teacherId, courseId, i));
         }
         map.put("responses",arrayList);
@@ -103,9 +104,36 @@ public class AcceptedResponsesController {
         return map;
     }
 
+    public Map<String,Integer> getDetails(String teacherId, String courseId, int n) {
+        //  System.out.println("Get average for " + teacherId + " and " + courseId+" question "+n);
+        List<TeacherFeedback> listOne = teacherFeedbackRepository.getTeacherFeedbackByTeacherIdAndCourseId(teacherId, courseId);//(Query.query(Criteria.where("teacherId").is(teacherId).andOperator(Criteria.where("courseId").is(courseId)))); //(Query.query(Criteria.where("teacherId").is(teacherId).andOperator(Criteria.where("courseId").is(courseId))), TeacherFeedback.class);
+        //   List<TeacherFeedback> lstOne = teacherFeedbackRepository.findAll();//Query.query(Criteria.where("teacherId").is(teacherId).andOperator(Criteria.where("courseId").is(courseId))));
+        int temp,one=0,two=0,three=0,four=0,five=0;
+        //System.out.println(listOne.size());
+        //System.out.println(listOne);
+        for(int i=0;i<listOne.size();i++) {
+            List<AcceptedSingleResponse> tempList = new ArrayList<>();
+            tempList = listOne.get(i).getResponses();
+            temp =  getRating(tempList.get(n-1).getResponse());
+            if(temp == 5){one ++;}
+            else if(temp == 4){two++;}
+            else if(temp == 3){three++;}
+            else if(temp == 2){four++;}
+            else if(temp == 1){five++;}
+        }
+        // System.out.println("To return : "+ sum+" "+listOne.size());
+        Map<String,Integer> map = new HashMap<>();
+        map.put("optionOne",one);
+        map.put("optionTwo",two);
+        map.put("optionThree",three);
+        map.put("optionFour",four);
+        map.put("optionFive",five);
+
+        return map;
+    }
     public double getAverageResponse(String teacherId, String courseId, int n) {
-        System.out.println("Get average for " + teacherId + " and " + courseId+" question "+n);
-        List<TeacherFeedback> listOne = teacherFeedbackRepository.findAll();//(Query.query(Criteria.where("teacherId").is(teacherId).andOperator(Criteria.where("courseId").is(courseId)))); //(Query.query(Criteria.where("teacherId").is(teacherId).andOperator(Criteria.where("courseId").is(courseId))), TeacherFeedback.class);
+      //  System.out.println("Get average for " + teacherId + " and " + courseId+" question "+n);
+        List<TeacherFeedback> listOne = teacherFeedbackRepository.getTeacherFeedbackByTeacherIdAndCourseId(teacherId, courseId);//(Query.query(Criteria.where("teacherId").is(teacherId).andOperator(Criteria.where("courseId").is(courseId)))); //(Query.query(Criteria.where("teacherId").is(teacherId).andOperator(Criteria.where("courseId").is(courseId))), TeacherFeedback.class);
        //   List<TeacherFeedback> lstOne = teacherFeedbackRepository.findAll();//Query.query(Criteria.where("teacherId").is(teacherId).andOperator(Criteria.where("courseId").is(courseId))));
         int sum = 0;
         System.out.println(listOne.size());
@@ -115,7 +143,7 @@ public class AcceptedResponsesController {
             tempList = listOne.get(i).getResponses();
             sum = sum + getRating(tempList.get(n-1).getResponse());
         }
-        System.out.println("To return : "+ sum+" "+listOne.size());
+       // System.out.println("To return : "+ sum+" "+listOne.size());
         return (double)sum/listOne.size();
     }
 
