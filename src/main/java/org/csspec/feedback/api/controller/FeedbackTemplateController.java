@@ -17,7 +17,7 @@ public class FeedbackTemplateController {
     @Autowired
     private FeedbackTemplateRepository feedbackTemplateRepository;
 
-    /* Make a new org.csspec.feedback form */
+    /* Make a new feedback form */
     @RequestMapping(value = "/feedback/new", method = RequestMethod.POST)
     public void storeFeedbackTemplate(@RequestBody FeedbackTemplate feedbackTemplate) {
         feedbackTemplateRepository.save(feedbackTemplate);

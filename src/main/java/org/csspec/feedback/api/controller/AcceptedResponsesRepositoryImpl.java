@@ -10,9 +10,6 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
-/**
- * Created by Jatinder Dhawan on 10/17/2016.
- */
 public class AcceptedResponsesRepositoryImpl implements AcceptedResponsesOperation {
     @Autowired
     private MongoOperations mongo;

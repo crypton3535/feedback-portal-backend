@@ -18,7 +18,7 @@ public class FeedbackStatusController {
     @Autowired
     private MongoOperations mongo;
 
-    /* Get org.csspec.feedback status of given org.csspec.feedback id for a given user */
+    /* Get feedback status of given feedbackId for a given userId */
     @RequestMapping(value = "/feedback/status/{courseId}/{userId}", method = RequestMethod.GET)
     public Map<String,Boolean> getFeedbackStatus(@PathVariable String courseId, @PathVariable String userId) {
         System.out.println("CourseID: " + courseId + ", UserId:" + userId);

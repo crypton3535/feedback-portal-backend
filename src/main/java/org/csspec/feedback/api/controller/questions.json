@@ -82,7 +82,7 @@
   },
   {
     "questionId": "4",
-    "statement": "Course objective and course outcomes were clear.",
+    "statement": "Course objectives and course outcomes were clear.",
     "type": "multiple",
     "options": [
       {
@@ -136,7 +136,7 @@
   },
   {
     "questionId": "6",
-    "statement": "Objectives, organisation and outcomes of the course were made clear in first two weeks of the course.",
+    "statement": "Objectives, organization and outcomes of the course were made clear in first two weeks of the course.",
     "type": "multiple",
     "options": [
       {
@@ -217,7 +217,7 @@
   },
   {
     "questionId": "9",
-    "statement": "Instructor encouraged discussion/ question in classroom.",
+    "statement": "Instructor encouraged discussion/ questions in classroom.",
     "type": "multiple",
     "options": [
       {
@@ -325,7 +325,7 @@
   },
   {
     "questionId": "13",
-    "statement": "instructor's communication and explanation were clear.",
+    "statement": "Instructor's communication and explanation were clear.",
     "type": "multiple",
     "options": [
       {
@@ -379,7 +379,7 @@
   },
   {
     "questionId": "15",
-    "statement": "The instructor's effectiveness in teaching and punctuallity in grading the exam was excellent.",
+    "statement": "The instructor's effectiveness in teaching and punctuality in grading the exam was excellent.",
     "type": "multiple",
     "options": [
       {
