@@ -7,9 +7,7 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 
-/**
- * Created by Jatinder Dhawan on 10/11/2016.
- */
+
 @Configuration
 @EnableMongoRepositories(basePackages= "org.csspec.feedback", repositoryImplementationPostfix="Impl")
 public class MongoConfig extends AbstractMongoConfiguration {
