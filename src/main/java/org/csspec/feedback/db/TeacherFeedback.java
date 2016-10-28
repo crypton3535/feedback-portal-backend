@@ -1,21 +1,19 @@
 package org.csspec.feedback.db;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TeacherFeedback {
 
     @JsonProperty("teacherId")
-    @Getter @Setter private String teacherId;
+    private String teacherId;
 
     @JsonProperty("courseId")
-    @Getter @Setter private String courseId;
+    private String courseId;
 
     @JsonProperty("responses")
-    @Getter @Setter private List<AcceptedSingleResponse> responses = new ArrayList<AcceptedSingleResponse>();
+    private List<AcceptedSingleResponse> responses = new ArrayList<AcceptedSingleResponse>();
 
     public String getTeacherId() {
         return teacherId;
@@ -39,5 +37,10 @@ public class TeacherFeedback {
 
     public void setCourseId(String courseId) {
         this.courseId = courseId;
+    }
+
+    @Override
+    public String toString() {
+        return "teacherId : "+teacherId+", courseId : "+courseId+", responses "+responses+" ] ";
     }
 }

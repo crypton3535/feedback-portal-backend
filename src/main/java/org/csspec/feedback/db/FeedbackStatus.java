@@ -1,18 +1,17 @@
 package org.csspec.feedback.db;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
 
 public class FeedbackStatus {
+
     @JsonProperty("userId")
-    @Getter @Setter private String userId;
+    private String userId;
 
     @JsonProperty("courseId")
-    @Getter	@Setter private String courseId;
+    private String courseId;
 
     @JsonProperty("teacherId")
-    @Getter	@Setter private String teacherId;
+    private String teacherId;
 
     public FeedbackStatus(String userId, String courseId, String teacherId) {
         this.courseId = courseId;

@@ -1,24 +1,22 @@
 package org.csspec.feedback.db;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
 
 public class SingleResponse {
-    @JsonProperty("OptionOne")
-    @Getter @Setter private int optionOne;
+    @JsonProperty("optionOne")
+    private int optionOne;
 
-    @JsonProperty("OptionTwo")
-    @Getter @Setter private int optionTwo;
+    @JsonProperty("optionTwo")
+    private int optionTwo;
 
-    @JsonProperty("OptionThree")
-    @Getter @Setter private int optionThree;
+    @JsonProperty("optionThree")
+    private int optionThree;
 
-    @JsonProperty("OptionFour")
-    @Getter @Setter private int optionFour;
+    @JsonProperty("optionFour")
+    private int optionFour;
 
-    @JsonProperty("OptionFive")
-    @Getter @Setter private int optionFive;
+    @JsonProperty("optionFive")
+    private int optionFive;
 
     SingleResponse() {
         this.optionOne = this.optionTwo = this.optionThree = this.optionFour = this.optionFive = 0;
@@ -48,4 +46,5 @@ public class SingleResponse {
         return this.optionFive;
     }
     public void setOptionFive(int value) {this.optionOne = value;}
+
 }

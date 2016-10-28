@@ -1,8 +1,6 @@
 package org.csspec.feedback.db;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,20 +8,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Course {
 
     @Id
-    @JsonProperty("CourseId")
-    @Getter @Setter private String courseId;
+    @JsonProperty("courseId")
+    private String courseId;
 
-    @JsonProperty("CourseName")
-    @Getter @Setter private String courseName;
+    @JsonProperty("courseName")
+    private String courseName;
 
-    @JsonProperty("DepartmentId")
-    @Getter @Setter private String departmentId;
+    @JsonProperty("departmentId")
+    private String departmentId;
 
-    @JsonProperty("CourseDescription")
-    @Getter @Setter private String courseDescription;
+    @JsonProperty("courseDescription")
+    private String courseDescription;
 
-    @JsonProperty("CourseCredits")
-    @Getter @Setter private int courseCredits;
+    @JsonProperty("courseCredits")
+    private int courseCredits;
 
     public Course() {};
 
@@ -47,5 +45,25 @@ public class Course {
 
     public String getCourseId() {
         return this.courseId;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public void setCourseDescription(String courseDescription) {
+        this.courseDescription = courseDescription;
+    }
+
+    public int getCourseCredits() {
+        return courseCredits;
+    }
+
+    public void setCourseCredits(int courseCredits) {
+        this.courseCredits = courseCredits;
     }
 }
