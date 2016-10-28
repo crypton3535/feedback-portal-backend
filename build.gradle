@@ -31,7 +31,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-jersey')
-	compile('org.projectlombok:lombok')
 	compile('org.springframework.session:spring-session')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-web-services')
